@@ -1,1 +1,1 @@
-web: bin/hubot -a irc -n FarBot --alias "!"
+web: bin/hubot -a irc -n farbot --alias "!"
