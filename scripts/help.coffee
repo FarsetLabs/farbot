@@ -54,15 +54,24 @@ helpContents = (name, commands) ->
 
 module.exports = (robot) ->
   robot.respond /help\s*(.*)?$/i, (msg) ->
-    cmds = robot.helpCommands()
     filter = msg.match[1]
 
     if filter
+      cmds = robot.helpCommands()
       cmds = cmds.filter (cmd) ->
         cmd.match new RegExp(filter, 'i')
+      prefix = robot.alias or robot.name
+      cmds = cmds.map (cmd) ->
+        cmd = cmd.replace /hubot/ig, robot.name
+        cmd.replace new RegExp("^#{robot.name}"), prefix
+
       if cmds.length == 0
         msg.send "No available commands match #{filter}"
         return
+        
+      emit = cmds.join "\n"
+      msg.send emit
+      return
 
     msg.send "NOPE. Last time I did that I flooded the channel and everyone got pissed."
     msg.send "Read the help via the web instead:"
