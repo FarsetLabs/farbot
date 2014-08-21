@@ -58,8 +58,7 @@ module.exports = (robot) ->
     msg.send "Read the help via the web instead:"
     msg.send "http://#{robot.name}.herokuapp.com/#{robot.name}/help"
 
-  robot.respond /helpforreal\s*(.*)?$/i, (msg) ->
-  robot.respond /help\s*(.*)?$/i, (msg) ->
+  robot.respond /no really, i need help\s*(.*)?$/i, (msg) ->
     cmds = robot.helpCommands()
     filter = msg.match[1]
 
