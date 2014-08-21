@@ -41,5 +41,6 @@
   "urban.coffee",
   "wat.coffee",
   "wikipedia.coffee",
-  "xkcd.coffee"
+  "xkcd.coffee",
+  "jira.coffee"
 ]
