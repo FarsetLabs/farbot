@@ -29,6 +29,7 @@
   "hackernews.coffee",
   "haters.coffee",
   "insult.coffee",
+  "keep-alive.coffee",
   "points.coffee",
   "redis-brain.coffee",
   "remember.coffee",
